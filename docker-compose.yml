@@ -1,0 +1,50 @@
+version: '3.3'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    depends_on:
+      - db_steve
+      - db_steve_test
+    ports:
+      - 3333:3333
+    volumes:
+      - .:/usr/app/
+      - /usr/app/node_modules
+    networks:
+      - steve-network
+
+  db_steve:
+    container_name: 'db_steve'
+    image: postgres
+    environment:
+      POSTGRES_DB: steve_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    networks:
+      - steve-network
+
+  db_steve_test:
+    container_name: 'db_steve_test'
+    image: postgres
+    environment:
+      POSTGRES_DB: steve_db_test
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - 5433:5432
+    networks:
+      - steve-network
+
+networks:
+  steve-network:
+
+volumes:
+  pg_data:
