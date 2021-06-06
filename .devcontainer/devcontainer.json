@@ -1,0 +1,23 @@
+{
+  "name": "Node.js",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash"
+  },
+
+  "extensions": ["dbaeumer.vscode-eslint"],
+
+  "portsAttributes": {
+    "3000": {
+      "label": "Hello Remote World",
+      "onAutoForward": "notify"
+    }
+  },
+
+  "postCreateCommand": "npm i",
+
+  "remoteUser": "node"
+}
