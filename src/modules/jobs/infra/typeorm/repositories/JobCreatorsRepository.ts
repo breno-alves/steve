@@ -20,6 +20,12 @@ export default class JobCreatorsRepository implements IJobCreatorRepository {
     return this.jobCreatorRepository.findOne(id);
   }
 
+  public async find(attributes: Partial<JobCreator>): Promise<JobCreator> {
+    return this.jobCreatorRepository.findOne({
+      where: { ...attributes },
+    });
+  }
+
   public async save(creator: JobCreator) {
     return this.jobCreatorRepository.save(creator);
   }
