@@ -34,13 +34,13 @@ class Job {
   @Column({ nullable: true, type: 'enum', enum: Currency })
   currency: Currency;
 
-  @Column({ name: 'seniority_level', nullable: true, type: 'simple-array' })
+  @Column('text', { name: 'seniority_level', nullable: true, array: true })
   seniorityLevel: string[];
 
   @Column({ name: 'url' })
   URL: string;
 
-  @Column({ nullable: true, type: 'simple-array' })
+  @Column('text', { nullable: true, array: true })
   labels: string[];
 
   //relation
