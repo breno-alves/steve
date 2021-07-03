@@ -1,4 +1,4 @@
-export default interface CreateCreatorDTO {
+export default interface CreateJobCreatorDTO {
   name: string;
   avatarURL?: string;
   profileURL?: string;
