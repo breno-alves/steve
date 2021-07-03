@@ -1,5 +1,5 @@
-import IJobsRepository from '@modules/jobs/repositories/IJobsRepository';
 import { getRepository, Repository } from 'typeorm';
+import IJobsRepository from '@modules/jobs/repositories/IJobsRepository';
 import Job from '../entities/Job';
 import CreateJobDTO from '@modules/jobs/dtos/CreateJobDTO';
 export default class JobsRepository implements IJobsRepository {
