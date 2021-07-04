@@ -1,4 +1,4 @@
-import IHashProvider from '@shared/container/providers/HashProvider/models/IHashProvider';
+import IHashProvider from '@modules/users/providers/HashProvider/models/IHashProvider';
 import AppError from '@shared/errors/AppError';
 import { injectable, inject } from 'tsyringe';
 import User from '../infra/typeorm/entities/User';
